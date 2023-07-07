@@ -1,0 +1,30 @@
+<div>
+    <h1 style="text-align: center;">Lista De Productos</h1>
+    {{#if limitedProducts}}
+        <ul>
+            {{#each limitedProducts}}
+                <li style="display: flex; justify-content: space-around;">
+                    <h2>{{title}}</h2>
+                    <p>ID: {{_id}}</p>
+                    <p>{{description}}</p>
+                    <p>Precio: {{price}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        {{#if products}}
+            <ul>
+                {{#each products}}
+                    <li style="display: flex; justify-content: space-around;">
+                        <h2>{{title}}</h2>
+                        <p>ID: {{_id}}</p>
+                        <p>Desc: {{description}}</p>
+                        <p>Precio: {{price}}</p>
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>No hay productos disponibles.</p>
+        {{/if}} 
+    {{/if}}
+</div>
